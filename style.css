@@ -1,0 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+
+body {
+  font-family: "Droid Sans", Arial, sans-serif;
+  font-size: 15px;
+}
+
+div.passport {
+  width: 25em;
+  border: 1px solid #d9d8d1;
+}
+
+div.passport h2 {
+  text-align: right;
+}
+
+div.passport h2 span.symbol {
+  text-align: center;
+  display: inline-block;
+  width: 4em;
+  float: left;
+}
