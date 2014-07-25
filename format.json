@@ -1,21 +1,42 @@
 {
-  "id" : "Zar",
-  "symbol" : "\\mathrm{Zar}",
-  "name" : "Zariski topology",
-
-  "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ an &eacute;tale morphism",
-  // TODO the version for <\sigma,\tau,...> would be
-  "refining" : [ "Zar", "cdp" ],
-  
-  "points" : "local rings",
-  
-  "coarser" : [ "Nis", "et", "fppf", "qf", "rh", "cdh", "ldh", "eh", "h" ],
-  "finer" : [],
-
-  // TODO maybe this version is better: immediately get the connecting arrow, use graph traversal to get the list
-  "coarser" : [ "Nis", "rh" ],
-  "finer" : [],
-
-  "x" : 0,
-  "y" : 0,
+  "nodes" : [
+    {
+      "id" : "Zar",
+      "symbol" : "\\mathrm{Zar}",
+      "name" : "Zariski topology",
+    
+      "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ an open immersion",
+      "refining" : [ "Zar", "cdp" ],
+      
+      "points" : "local rings",
+    
+      "coarser" : [ "Nis", "rh" ],
+      "finer" : [],
+    
+      "x" : 0,
+      "y" : 0
+    },
+    {
+      "id" : "et",
+      "symbol" : "\\mathrm{ét}",
+      "name" : "étale topology",
+    
+      "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ an étale morphism",
+      "refining" : [ "Zar", "cdp" ],
+      
+      "points" : "strictly henselian local ring",
+    
+      "coarser" : [ "fppf", "cdh" ],
+      "finer" : [ "Zar" ],
+    
+      "x" : 2,
+      "y" : 0
+    }
+  ],
+  "links" : [
+    {
+      "source" : "Zar",
+      "target" : "et"
+    }
+  ]
 }
