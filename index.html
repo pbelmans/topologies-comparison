@@ -210,16 +210,16 @@ d3.json("format.json", function(error, graph) {
     }
 
     dl.append("<dt>coarser than</dt>");
-    if (topology.coarser.length == 0)
-      dl.append("<dd><span class='nothing'>nothing</span>");
-    else 
-      dl.append($("<dd>").append(createComparisonList(topology, topology.coarser)));
-
-    dl.append("<dt>finer than</dt>");
-    if (topology.finer.length == 0)
+    if (topology.finer.length == 0) // I admit, this is a confusing name
       dl.append("<dd><span class='nothing'>nothing</span>");
     else 
       dl.append($("<dd>").append(createComparisonList(topology, topology.finer)));
+
+    dl.append("<dt>finer than</dt>");
+    if (topology.coarser.length == 0) // I admit, this is a confusing name
+      dl.append("<dd><span class='nothing'>nothing</span>");
+    else 
+      dl.append($("<dd>").append(createComparisonList(topology, topology.coarser)));
 
     dl.appendTo(passport);
     
