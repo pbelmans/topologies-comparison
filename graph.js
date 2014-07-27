@@ -100,7 +100,7 @@ d3.json("format.json", function(error, graph) {
     }
     if ("refining" in topology) {
       dl.append("<dt>refining</dt>");
-      dl.append("<dd>" + topology.refining); // TODO use MathJax here (not SVG, so okay)
+      dl.append("<dd>$\\langle" + topology.refining.map(function(id) { return topologies[id].symbol; }).join() + "\\rangle$");
     }
 
     function createComparisonList(topology, list) {
