@@ -145,6 +145,10 @@ d3.json("format.json", function(error, graph) {
   link = link.data(graph.links)
     .enter().append("line")
     .attr("class", "link")
+    .attr("x1", function(d) { return transform(d.source.x, d.source.y)[0] + "px"; })
+    .attr("y1", function(d) { return transform(d.source.x, d.source.y)[1] + "px"; })
+    .attr("x2", function(d) { return transform(d.target.x, d.target.y)[0] + "px"; })
+    .attr("y2", function(d) { return transform(d.target.x, d.target.y)[1] + "px"; })
 
   node = node.data(graph.nodes)
     .enter().append("circle")
