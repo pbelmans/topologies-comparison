@@ -129,8 +129,6 @@ d3.json("format.json", function(error, graph) {
     
     passport.appendTo("body");
   }
-  
-  MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 
   force
     .nodes(graph.nodes)
@@ -169,12 +167,21 @@ d3.json("format.json", function(error, graph) {
     .on("mouseout", mouseOutTopology)
     .on("click", clickTopology)
   
-  //MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+  MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 });
 
 /* events */
 var isFixed = false;
 var fixedPassport = undefined;
+
+/* TODO suggested naming
+ * fixPassport
+ * unfixPassport
+ * activateTopology
+ * deactivateTopology
+ * 
+ * and then the events call the correct thing
+ */
 
 // ...
 function mouseOverTopology(topology) {
