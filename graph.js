@@ -220,6 +220,7 @@ function mouseOutTopology() {
 }
 
 function clickTopology(topology) {
+  // TODO the clicked node should also be visible (as we can click on a node while it will remain active)
   if (isFixed) {
     // we might wish to modify the layout, hence we unfix things
     isFixed = false;
