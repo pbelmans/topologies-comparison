@@ -86,13 +86,11 @@ d3.json("format.json", function(error, graph) {
     }
   }
 
-  console.log(topologies);
-
   // create the passports for each topology
   for (id in topologies) {
     var topology = topologies[id];
 
-    var passport = $("<div class='passport' id='" + topology.id + "'></div>");
+    var passport = $("<div class='invisible passport' id='" + topology.id + "' data-topology='" + topology.id + "'></div>"); // TODO can we remove the id?
     passport.append("<h2><span class='symbol'>$" + topology.symbol + "$</span> " + topology.name + "</h2>");
 
     var dl = $("<dl></dl>");
@@ -109,6 +107,8 @@ d3.json("format.json", function(error, graph) {
       var ul = $("<ul class='comparison-list'></ul>");
       for (var j = 0; j < list.length; j++)
         ul.append("<li><a href='#'>" + list[j] + "</a>"); // TODO display both abbreviation and full name, or at least the symbol (= use MathJax)
+        // TODO hovering in this list should active the same event as hovering in a fixed situation (i.e. indicate the node by a border)
+        // TODO clicking in this list should activate the clicked topology
 
       return ul;
     }
@@ -146,12 +146,88 @@ d3.json("format.json", function(error, graph) {
     .attr("y2", function(d) { return transform(d.target.x, d.target.y)[1] + "em"; })
 
   node = node.data(graph.nodes)
-    .enter().append("text")
+    .enter()
+    .append("rect")
+    .attr("data-topology", function(d) { return d.id; })
+    .attr("x", function(d) { return (transform(d.x, d.y)[0] - 1.5) + "em"; })
+    .attr("y", function(d) { return (transform(d.x, d.y)[1] - .9) + "em"; })
+    .attr("width", "3em")
+    .attr("height", "1.6em" )
+    .attr("fixed", "true")
+    .on("mouseover", mouseOverTopology)
+    .on("mouseout", mouseOutTopology)
+    .on("click", clickTopology)
+
+  var text = svg.append("g").selectAll("text").data(graph.nodes)
+    .enter()
+    .append("text")
+    .attr("id", function(d) { return "text-" + d.id; })
     .attr("x", function(d) { return transform(d.x, d.y)[0] + "em"; })
     .attr("y", function(d) { return (transform(d.x, d.y)[1] + .3) + "em"; })
-    .attr("fixed", "true")
-    .text(function(d) { return d.id }); // TODO it seems to be hard to use MathJax inside SVG...
-
+    .text(function(d) { return d.id }) // TODO it seems to be hard to use MathJax inside SVG...
+    .on("mouseover", mouseOverTopology)
+    .on("mouseout", mouseOutTopology)
+    .on("click", clickTopology)
+  
   //MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 });
 
+/* events */
+var isFixed = false;
+var fixedPassport = undefined;
+
+// ...
+function mouseOverTopology(topology) {
+  // draw a border
+  // TODO
+
+  // if we have clicked on an element in the graph we fix the layout
+  if (isFixed)
+    return;
+    // TODO if another node is fixed we should still highlight the current node in a different way
+    // TODO and fix the cursor too
+
+  // make the current node in the graph active
+  $("rect[data-topology=" + topology.id + "]").attr("class", "active");
+
+  // hide all passports except for this one
+  $("div").attr("class", "passport invisible");
+  $("div[data-topology=" + topology.id + "]").attr("class", "passport visible");
+
+  for (var i = 0; i < topology.coarser.length; i++)
+    $("rect[data-topology=" + topology.coarser[i] + "]").attr("class", "coarser");
+  for (var i = 0; i < topology.finer.length; i++)
+    $("rect[data-topology=" + topology.finer[i] + "]").attr("class", "finer");
+}
+
+function mouseOutTopology() {
+  // remove the border
+  // TODO
+
+  // if we have clicked on an element in the graph we fix the layout
+  if (isFixed)
+    return;
+
+  $("div").attr("class", "passport invisible");
+  $("rect").attr("class", "");
+}
+
+function clickTopology(topology) {
+  if (isFixed) {
+    // we might wish to modify the layout, hence we unfix things
+    isFixed = false;
+
+    // reset the styling, regardless
+    mouseOutTopology();
+    mouseOverTopology(topology);
+
+    if (fixedPassport != topology.id) {
+      isFixed = true;
+      fixedPassport = topology.id;
+    }
+  }
+  else {
+    isFixed = true;
+    fixedPassport = topology.id;
+  }
+}
