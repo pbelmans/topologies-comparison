@@ -74,7 +74,7 @@
     },
 
     {
-      "id" : "fpsl'",
+      "id" : "fpsl",
       "symbol" : "\\mathrm{fps}\\ell'",
       "name" : "finite-surjective-prime-to-$\\ell$ topology",
 
@@ -166,7 +166,7 @@
       "symbol" : "\\ell\\mathrm{dh}",
       "name" : "eh topology",
 
-      "refining" : ["cdh", "fpsl'"],
+      "refining" : ["cdh", "fpsl"],
       
       "x" : 1.5,
       "y" : -0.5
@@ -206,14 +206,14 @@
     },
     {
       "coarser" : "cl",
-      "finer"   : "fpsl'"
+      "finer"   : "fpsl"
     },
     {
-      "coarser" : "fpsl'",
+      "coarser" : "fpsl",
       "finer"   : "ldh"
     },
     {
-      "coarser" : "fpsl'",
+      "coarser" : "fpsl",
       "finer"   : "fps"
     },
     {
