@@ -10,9 +10,6 @@
       
       "points" : "local rings",
     
-      "coarser" : [ "Nis", "rh" ],
-      "finer" : [],
-    
       "x" : 0,
       "y" : 0
     },
@@ -22,12 +19,8 @@
       "name" : "étale topology",
     
       "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ an étale morphism",
-      "refining" : [ "Zar", "cdp" ],
       
       "points" : "strictly henselian local ring",
-    
-      "coarser" : [ "fppf", "cdh" ],
-      "finer" : [ "Zar" ],
     
       "x" : 2,
       "y" : 0
@@ -35,8 +28,8 @@
   ],
   "links" : [
     {
-      "source" : "Zar",
-      "target" : "et"
+      "coarser" : "Zar",
+      "finer" : "et"
     }
   ]
 }
