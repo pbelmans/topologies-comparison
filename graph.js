@@ -103,12 +103,15 @@ d3.json("format.json", function(error, graph) {
       dl.append("<dd>$\\langle" + topology.refining.map(function(id) { return topologies[id].symbol; }).join() + "\\rangle$");
     }
 
-    function createComparisonList(topology, list) {
+    function createComparisonList(topology, list) { // TODO we are not using the topology variable?
       var ul = $("<ul class='comparison-list'></ul>");
-      for (var j = 0; j < list.length; j++)
-        ul.append("<li><a href='#'>" + list[j] + "</a>"); // TODO display both abbreviation and full name, or at least the symbol (= use MathJax)
+      for (var j = 0; j < list.length; j++) {
+
+        var topologyLink = $("<a href='#' data-topology='" + list[j] + "'>$" + topologies[list[j]].symbol + "$</a>")
+          .click(function(e) { clickTopology(topologies[$(e.delegateTarget).data("topology")]); } );
         // TODO hovering in this list should active the same event as hovering in a fixed situation (i.e. indicate the node by a border)
-        // TODO clicking in this list should activate the clicked topology
+        ul.append($("<li>").append(topologyLink));
+      }
 
       return ul;
     }
