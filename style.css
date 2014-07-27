@@ -50,3 +50,25 @@ div.passport dl dd {
 div.passport ul {
   margin: .3em 0 0 0;
 }
+
+.link {
+  stroke: #999;
+  stroke-width: 1.5px;
+}
+
+.node {
+  cursor: move;
+  fill: #ccc;
+  stroke: #444;
+  stroke-width: 1.5px;
+  z-index: 1;
+}
+
+text {
+  color: black;
+}
+
+.node.fixed {
+  fill: #f00;
+}
+
