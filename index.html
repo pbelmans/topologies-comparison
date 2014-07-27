@@ -124,7 +124,7 @@ function getIndex(nodes, id) {
 
 // transform the coordinates from the JSON file to meaningful coordinates on the canvas
 function transform(x, y) {
-  return [600 + 100 * x, 600 + 100 * y]; // TODO make this an object with .x and .y?
+  return [600 + 100 * x, 600 - 100 * y]; // TODO make this an object with .x and .y?
 }
 
 d3.json("format.json", function(error, graph) {
