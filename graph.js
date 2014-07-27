@@ -1,5 +1,5 @@
-var width = 800,
-    height = 500;
+var width = 60,
+    height = 20;
 
 var force = d3.layout.force()
   .size([width, height])
@@ -9,8 +9,8 @@ var force = d3.layout.force()
 
 var svg = d3.select("body").append("svg")
   .attr("id", "canvas")
-  .attr("width", width)
-  .attr("height", height);
+  .attr("width", width + "em")
+  .attr("height", height + "em");
 
 var link = svg.selectAll(".link"),
     node = svg.selectAll(".node");
@@ -27,7 +27,7 @@ function getIndex(nodes, id) {
 
 // transform the coordinates from the JSON file to meaningful coordinates on the canvas
 function transform(x, y) {
-  return [200 + 100 * x, height / 2 - 100 * y]; // TODO make this an object with .x and .y?
+  return [10 + 6 * x, height / 2 - 6 * y]; // TODO make this an object with .x and .y?
 }
 
 d3.json("format.json", function(error, graph) {
@@ -140,24 +140,16 @@ d3.json("format.json", function(error, graph) {
   link = link.data(graph.links)
     .enter().append("line")
     .attr("class", "link")
-    .attr("x1", function(d) { return transform(d.source.x, d.source.y)[0] + "px"; })
-    .attr("y1", function(d) { return transform(d.source.x, d.source.y)[1] + "px"; })
-    .attr("x2", function(d) { return transform(d.target.x, d.target.y)[0] + "px"; })
-    .attr("y2", function(d) { return transform(d.target.x, d.target.y)[1] + "px"; })
+    .attr("x1", function(d) { return transform(d.source.x, d.source.y)[0] + "em"; })
+    .attr("y1", function(d) { return transform(d.source.x, d.source.y)[1] + "em"; })
+    .attr("x2", function(d) { return transform(d.target.x, d.target.y)[0] + "em"; })
+    .attr("y2", function(d) { return transform(d.target.x, d.target.y)[1] + "em"; })
 
   node = node.data(graph.nodes)
-    .enter().append("circle")
-    .attr("class", "node")
-    .attr("r", 5)
-    .attr("cx", function(d) { return transform(d.x, d.y)[0] + "px"; })
-    .attr("cy", function(d) { return transform(d.x, d.y)[1] + "px"; })
-    .attr("fixed", "true");
-
-  text = svg.append("g").selectAll("text")
-    .data(force.nodes())
     .enter().append("text")
-    .attr("x", function(d) { return transform(d.x, d.y)[0] + "px"; })
-    .attr("y", function(d) { return transform(d.x, d.y)[1] + "px"; })
+    .attr("x", function(d) { return transform(d.x, d.y)[0] + "em"; })
+    .attr("y", function(d) { return (transform(d.x, d.y)[1] + .3) + "em"; })
+    .attr("fixed", "true")
     .text(function(d) { return d.id }); // TODO it seems to be hard to use MathJax inside SVG...
 
   //MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
