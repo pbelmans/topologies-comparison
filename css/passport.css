@@ -1,0 +1,55 @@
+div.passport {
+  width: 25em;
+  border: 1px solid #d9d8d1;
+}
+
+div.passport.visible {
+  display: block;
+  top: 1em;
+  left: 1em;
+  position: absolute;
+}
+
+div.passport.invisible {
+  display: none;
+}
+
+div.passport h2 {
+  font-size: 1.5em;
+  text-align: right;
+  margin: .3em;
+  padding-bottom: .3em;
+  border-bottom: 1px solid #d9d8d1;
+}
+
+div.passport h2 span.symbol {
+  text-align: center;
+  display: inline-block;
+  width: 4em;
+  float: left;
+}
+
+div.passport a {
+  color: #666;
+  text-decoration: none;
+}
+
+div.passport a:hover {
+  text-decoration: underline;
+}
+
+div.passport dl {
+  margin: 0 .45em;
+}
+
+div.passport dl dt {
+  font-weight: bold;
+}
+
+div.passport dl dd {
+  margin-bottom: .5em;
+}
+
+div.passport ul {
+  margin: .3em 0 0 0;
+}
