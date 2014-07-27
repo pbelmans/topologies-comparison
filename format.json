@@ -41,13 +41,40 @@
     },
 
     {
+      "id" : "sm",
+      "symbol" : "\\mathrm{sm}",
+      "name" : "smooth topology",
+
+      "x" : 3,
+      "y" : 0
+    },
+
+    {
+      "id" : "syn",
+      "symbol" : "\\mathrm{syn}",
+      "name" : "syntomic topology",
+
+      "x" : 4,
+      "y" : 0
+    },
+
+    {
       "id" : "fppf",
       "symbol" : "\\mathrm{fppf}",
       "name" : "fppf topology",
 
       "refining" : ["Nis", "fps"],
     
-      "x" : 3,
+      "x" : 5,
+      "y" : 0
+    },
+
+    {
+      "id" : "fpqc",
+      "symbol" : "\\mathrm{fpqc}",
+      "name" : "fpqc topology",
+
+      "x" : 6,
       "y" : 0
     },
 
@@ -58,8 +85,8 @@
 
       "refining" : ["et", "f"],
     
-      "x" : 4,
-      "y" : 0
+      "x" : 7,
+      "y" : -0.5
     },
 
     {
@@ -91,7 +118,7 @@
 
       "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a finite flat morphism",
       
-      "x" : 3,
+      "x" : 5,
       "y" : 1
     },
 
@@ -102,7 +129,7 @@
 
       "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ a finite morphism",
       
-      "x" : 4,
+      "x" : 7,
       "y" : 1
     },
 
@@ -113,7 +140,7 @@
 
       "generated" : "a completely decomposed singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a proper morphism",
       
-      "x" : 5,
+      "x" : 8,
       "y" : 1
     },
 
@@ -179,7 +206,7 @@
 
       "refining" : ["Zar", "prop"],
       
-      "x" : 5,
+      "x" : 8,
       "y" : -1
     }
   ],
@@ -194,7 +221,19 @@
     },
     {
       "coarser" : "et",
+      "finer"   : "sm"
+    },
+    {
+      "coarser" : "sm",
+      "finer"   : "syn"
+    },
+    {
+      "coarser" : "syn",
       "finer"   : "fppf"
+    },
+    {
+      "coarser" : "fppf",
+      "finer"   : "fpqc"
     },
     {
       "coarser" : "fppf",
@@ -219,6 +258,10 @@
     {
       "coarser" : "fps",
       "finer"   : "f"
+    },
+    {
+      "coarser" : "f",
+      "finer"   : "qfh"
     },
     {
       "coarser" : "f",
@@ -264,7 +307,6 @@
       "coarser" : "eh",
       "finer"   : "h"
     }
-
 
 
 
