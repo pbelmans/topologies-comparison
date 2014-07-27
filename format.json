@@ -13,6 +13,20 @@
       "x" : 0,
       "y" : 0
     },
+
+    {
+      "id" : "Nis",
+      "symbol" : "\\mathrm{Nis}",
+      "name" : "Nisnevich topology",
+    
+      "generated" : "a completely decomposed family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ an étale morphism",
+      
+      "points" : "henselian local ring",
+    
+      "x" : 1,
+      "y" : 0
+    },
+
     {
       "id" : "et",
       "symbol" : "\\mathrm{ét}",
@@ -24,12 +38,237 @@
     
       "x" : 2,
       "y" : 0
+    },
+
+    {
+      "id" : "fppf",
+      "symbol" : "\\mathrm{fppf}",
+      "name" : "fppf topology",
+
+      "refining" : ["Nis", "fps"],
+    
+      "x" : 3,
+      "y" : 0
+    },
+
+    {
+      "id" : "qfh",
+      "symbol" : "\\mathrm{qfh}",
+      "name" : "qfh topology",
+
+      "refining" : ["et", "f"],
+    
+      "x" : 4,
+      "y" : 0
+    },
+
+    {
+      "id" : "cl",
+      "symbol" : "\\mathrm{cl}",
+      "name" : "closed topology",
+
+      "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ a closed immersion",
+      
+      "x" : 0,
+      "y" : 1
+    },
+
+    {
+      "id" : "fpsl'",
+      "symbol" : "\\mathrm{fps}\\ell'",
+      "name" : "finite-surjective-prime-to-$\\ell$ topology",
+
+      "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a finite flat morphism of constant degree prime to $\\ell$",
+      
+      "x" : 1.5,
+      "y" : 1
+    },
+
+    {
+      "id" : "fps",
+      "symbol" : "\\mathrm{fps}",
+      "name" : "finite-flat topology",
+
+      "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a finite flat morphism",
+      
+      "x" : 3,
+      "y" : 1
+    },
+
+    {
+      "id" : "f",
+      "symbol" : "\\mathrm{fps}",
+      "name" : "finite topology",
+
+      "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ a finite morphism",
+      
+      "x" : 4,
+      "y" : 1
+    },
+
+    {
+      "id" : "prop",
+      "symbol" : "\\mathrm{prop}",
+      "name" : "proper topology",
+
+      "generated" : "a completely decomposed singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a proper morphism",
+      
+      "x" : 5,
+      "y" : 1
+    },
+
+    {
+      "id" : "cdp",
+      "symbol" : "\\mathrm{cdp}",
+      "name" : "envelope topology",
+
+      "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a proper morphism",
+      
+      "x" : -1,
+      "y" : -1
+    },
+
+    {
+      "id" : "rh",
+      "symbol" : "\\mathrm{rh}",
+      "name" : "rh topology",
+
+      "refining" : ["Zar", "cdp"],
+      
+      "x" : 0,
+      "y" : -1
+    },
+
+    {
+      "id" : "cdh",
+      "symbol" : "\\mathrm{cdh}",
+      "name" : "cdh topology",
+
+      "refining" : ["Nis", "rh"],
+      
+      "x" : 1,
+      "y" : -1
+    },
+    
+    {
+      "id" : "eh",
+      "symbol" : "\\mathrm{eh}",
+      "name" : "eh topology",
+
+      "refining" : ["et", "rh"],
+      
+      "x" : 2,
+      "y" : -1
+    },
+
+    {
+      "id" : "ldh",
+      "symbol" : "\\ell\\mathrm{dh}",
+      "name" : "eh topology",
+
+      "refining" : ["cdh", "fpsl'"],
+      
+      "x" : 1.5,
+      "y" : -0.5
+    },
+
+    {
+      "id" : "h",
+      "symbol" : "\\mathrm{h}",
+      "name" : "h topology",
+
+      "refining" : ["Zar", "prop"],
+      
+      "x" : 5,
+      "y" : -1
     }
   ],
   "links" : [
     {
       "coarser" : "Zar",
-      "finer" : "et"
+      "finer"   : "Nis"
+    },
+    {
+      "coarser" : "Nis",
+      "finer"   : "et"
+    },
+    {
+      "coarser" : "et",
+      "finer"   : "fppf"
+    },
+    {
+      "coarser" : "fppf",
+      "finer"   : "qfh"
+    },
+    {
+      "coarser" : "qfh",
+      "finer"   : "h"
+    },
+    {
+      "coarser" : "cl",
+      "finer"   : "fpsl'"
+    },
+    {
+      "coarser" : "fpsl'",
+      "finer"   : "ldh"
+    },
+    {
+      "coarser" : "fpsl'",
+      "finer"   : "fps"
+    },
+    {
+      "coarser" : "fps",
+      "finer"   : "f"
+    },
+    {
+      "coarser" : "f",
+      "finer"   : "prop"
+    },
+    {
+      "coarser" : "prop",
+      "finer"   : "h"
+    },
+    {
+      "coarser" : "cdp",
+      "finer"   : "rh"
+    },
+    {
+      "coarser" : "Zar",
+      "finer"   : "rh"
+    },
+    {
+      "coarser" : "rh",
+      "finer"   : "cdh"
+    },
+    {
+      "coarser" : "Nis",
+      "finer"   : "cdh"
+    },
+    {
+      "coarser" : "cdh",
+      "finer"   : "ldh"
+    },
+    {
+      "coarser" : "cdh",
+      "finer"   : "eh"
+    },
+    {
+      "coarser" : "et",
+      "finer"   : "eh"
+    },
+    {
+      "coarser" : "ldh",
+      "finer"   : "h"
+    },
+    {
+      "coarser" : "eh",
+      "finer"   : "h"
     }
+
+
+
+
+
+
   ]
 }
