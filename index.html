@@ -6,6 +6,8 @@
 <link rel="stylesheet" type="text/css" href="normalize.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
 <script type='text/x-mathjax-config'>
   MathJax.Hub.Config({
     extensions: ['tex2jax.js'],
@@ -246,17 +248,12 @@ d3.json("format.json", function(error, graph) {
   text = svg.append("g").selectAll("text")
     .data(force.nodes())
     .enter().append("text")
-    .attr("dx", function(d) { return transform(d.x, d.y)[0] + 20 + "px"; })
-    .attr("dy", function(d) { return transform(d.x, d.y)[1] + 5 + "px"; })
-    .text("test"); // TODO improve
-});
+    .attr("x", function(d) { return transform(d.x, d.y)[0] + "px"; })
+    .attr("y", function(d) { return transform(d.x, d.y)[1] + "px"; })
+    .text(function(d) { return d.id }); // TODO it seems to be hard to use MathJax inside SVG...
 
-function tick() {
-  link.attr("x1", function(d) { return d.source.x; })
-      .attr("y1", function(d) { return d.source.y; })
-      .attr("x2", function(d) { return d.target.x; })
-      .attr("y2", function(d) { return d.target.y; })
-}
+  //MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+});
 
 </script>
 </body>
