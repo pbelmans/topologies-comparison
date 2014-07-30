@@ -8,7 +8,7 @@
       "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ an open immersion",
       "refining" : [ "Zar", "cdp" ],
       
-      "points" : "local rings",
+      "points" : "local ring",
     
       "x" : 0,
       "y" : 0

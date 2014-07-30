@@ -1,0 +1,19 @@
+{
+  "points" : {
+    "local" : "07BI",
+    "henselian" : "04GF",
+    "strictly henselian" : "04GF",
+    "valuation" : "00I9",
+    "integral" : "00GI"
+  },
+
+  "generated" : {
+    "closed immersion" : "01IO",
+    "open immersion" : "01IO",
+    "smooth" : "01V4",
+    "étale" : "02GI",
+    "syntomic" : "01UC",
+    "flat" : "01U3",
+    "proper" : "01W1"
+  }
+}
