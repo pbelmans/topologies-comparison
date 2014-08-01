@@ -12,6 +12,27 @@ var svg = d3.select("body").append("svg")
   .attr("width", width + "em")
   .attr("height", height + "em");
 
+// create the marker
+svg.selectAll("marker")
+  .data(["triangle", "equals"])
+  .enter()
+  .append("svg:marker")
+  .attr("id", function(d) { return d; })
+  .attr("viewBox", "0 0 10 10")
+  .attr("refX", 0)
+  .attr("refY", 5)
+  .attr("markerWidth", 5)
+  .attr("markerHeight", 5)
+  .attr("orient", "auto")
+  .append("svg:path")
+  .attr("d",
+      function(d) {
+        switch(d) {
+          case "triangle": return "M 0 0 L 10 5 L 0 10 z";
+          case "equals" : return "M 0 0 L 10 0 L 10 2 L 0 2 z M 0 3 L 10 3 L 10 5 L 0 5 z";
+        }
+      });
+
 var link = svg.selectAll(".link"),
     node = svg.selectAll(".node");
 
@@ -159,12 +180,28 @@ d3.json("format.json", function(error, graph) {
     .start();
 
   link = link.data(graph.links)
-    .enter().append("line")
+    .enter().append("polyline")
     .attr("class", "link")
-    .attr("x1", function(d) { return transform(d.source.x, d.source.y)[0] + "em"; })
-    .attr("y1", function(d) { return transform(d.source.x, d.source.y)[1] + "em"; })
-    .attr("x2", function(d) { return transform(d.target.x, d.target.y)[0] + "em"; })
-    .attr("y2", function(d) { return transform(d.target.x, d.target.y)[1] + "em"; })
+    .attr("points",
+        function(d) {
+          var points = "";
+          // TODO I'm using the fixed em size here...
+          points += 15 * transform(d.target.x, d.target.y)[0] + ",";
+          points += 15 * transform(d.target.x, d.target.y)[1] + " ";
+          // TODO computing the "midpoint" should rather be a fixed distance from the target?
+          points += 15 * (1.5 * transform(d.source.x, d.source.y)[0] + transform(d.target.x, d.target.y)[0]) / 2.5 + ","
+          points += 15 * (1.5 * transform(d.source.x, d.source.y)[1] + transform(d.target.x, d.target.y)[1]) / 2.5 + " "
+          points += 15 * transform(d.source.x, d.source.y)[0] + ",";
+          points += 15 * transform(d.source.x, d.source.y)[1];
+
+          return points;
+        }
+    )
+    .attr("marker-mid",
+        function(d) {
+          if (d.type === undefined) d.type = "triangle";
+          return "url(#" + d.type + ")";
+        });
 
   node = node.data(graph.nodes)
     .enter()

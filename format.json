@@ -237,7 +237,8 @@
     },
     {
       "coarser" : "et",
-      "finer"   : "sm"
+      "finer"   : "sm",
+      "type"    : "equals"
     },
     {
       "coarser" : "sm",

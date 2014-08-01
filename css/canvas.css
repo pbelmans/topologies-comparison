@@ -28,7 +28,11 @@ rect.finer {
   fill: #87979E;
 }
 
-line.link {
+marker#triangle {
+  fill: #999;
+}
+
+polyline.link {
   stroke: #999;
   stroke-width: 1.5px;
 }
