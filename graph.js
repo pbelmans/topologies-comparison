@@ -48,7 +48,7 @@ function getIndex(nodes, id) {
 
 function replaceTerms(string, terms) {
   for (term in terms)
-    string = string.replace(term, "<a href='http://stacks.math.columbia.edu/tag/" + terms[term] + "'>" + term + "</a>");
+    string = string.replace(term, "<a href='https://stacks.math.columbia.edu/tag/" + terms[term] + "'>" + term + "</a>");
   // TODO we should make sure we don't match integral in "integrally closed", hence there should be a regex for "end of string or space after the word"
 
   return string;
@@ -89,17 +89,17 @@ function createPassport(topology, topologies, terms) {
     dl.append("<dt>coarser than</dt>");
     if (topology.finer.length == 0) // I admit, this is a confusing name
       dl.append("<dd><span class='nothing'>nothing</span>");
-    else 
+    else
       dl.append($("<dd>").append(createComparisonList(topology, topology.finer)));
 
     dl.append("<dt>finer than</dt>");
     if (topology.coarser.length == 0) // I admit, this is a confusing name
       dl.append("<dd><span class='nothing'>nothing</span>");
-    else 
+    else
       dl.append($("<dd>").append(createComparisonList(topology, topology.coarser)));
 
     dl.appendTo(passport);
-    
+
     passport.appendTo("body");
   }
 
@@ -226,7 +226,7 @@ d3.json("format.json", function(error, graph) {
     .on("mouseover", mouseOverTopology)
     .on("mouseout", mouseOutTopology)
     .on("click", clickTopology)
-  
+
   MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 });
 
@@ -239,7 +239,7 @@ var fixedPassport = undefined;
  * unfixPassport
  * activateTopology
  * deactivateTopology
- * 
+ *
  * and then the events call the correct thing
  */
 
