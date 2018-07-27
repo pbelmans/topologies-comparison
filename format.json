@@ -120,7 +120,7 @@
       "symbol" : "\\mathrm{fps}",
       "name" : "finite-flat topology",
 
-      "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a finite flat morphism",
+      "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}$, for $f$ a finite flat morphism",
       
       "x" : 5,
       "y" : 1
