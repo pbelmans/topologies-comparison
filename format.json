@@ -4,12 +4,12 @@
       "id" : "Zar",
       "symbol" : "\\mathrm{Zar}",
       "name" : "Zariski topology",
-    
+
       "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ an open immersion",
       "refining" : [ "Zar", "cdp" ],
-      
+
       "points" : "local ring",
-    
+
       "x" : 0,
       "y" : 0
     },
@@ -18,11 +18,11 @@
       "id" : "Nis",
       "symbol" : "\\mathrm{Nis}",
       "name" : "Nisnevich topology",
-    
+
       "generated" : "a completely decomposed family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ an étale morphism",
-      
+
       "points" : "henselian local ring",
-    
+
       "x" : 1,
       "y" : 0
     },
@@ -31,11 +31,11 @@
       "id" : "et",
       "symbol" : "\\mathrm{ét}",
       "name" : "étale topology",
-    
+
       "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ an étale morphism",
-      
+
       "points" : "strictly henselian local ring",
-    
+
       "x" : 2,
       "y" : 0
     },
@@ -64,7 +64,7 @@
       "name" : "fppf topology",
 
       "refining" : ["Nis", "fps"],
-    
+
       "x" : 5,
       "y" : 0
     },
@@ -86,7 +86,7 @@
       "refining" : ["et", "f"],
 
       "points" : "absolutely integrally closed integral local ring",
-    
+
       "x" : 7,
       "y" : -0.5
     },
@@ -99,7 +99,7 @@
       "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ a closed immersion",
 
       "points" : "integral ring",
-      
+
       "x" : 0,
       "y" : 1
     },
@@ -110,7 +110,7 @@
       "name" : "finite-surjective-prime-to-$\\ell$ topology",
 
       "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a finite flat morphism of constant degree prime to $\\ell$",
-      
+
       "x" : 1.5,
       "y" : 1
     },
@@ -121,7 +121,7 @@
       "name" : "finite-flat topology",
 
       "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}$, for $f$ a finite flat morphism",
-      
+
       "x" : 5,
       "y" : 1
     },
@@ -134,7 +134,7 @@
       "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ a finite morphism",
 
       "points" : "absolutely integrally closed integral ring",
-      
+
       "x" : 7,
       "y" : 1
     },
@@ -145,7 +145,7 @@
       "name" : "proper topology",
 
       "generated" : "a completely decomposed singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a proper morphism",
-      
+
       "x" : 8,
       "y" : 1
     },
@@ -156,7 +156,7 @@
       "name" : "envelope topology",
 
       "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a proper morphism",
-      
+
       "x" : -1,
       "y" : -1
     },
@@ -169,7 +169,7 @@
       "refining" : ["Zar", "cdp"],
 
       "points" : "valuation ring",
-      
+
       "x" : 0,
       "y" : -1
     },
@@ -182,11 +182,11 @@
       "refining" : ["Nis", "rh"],
 
       "points" : "henselian valuation ring",
-      
+
       "x" : 1,
       "y" : -1
     },
-    
+
     {
       "id" : "eh",
       "symbol" : "\\mathrm{eh}",
@@ -195,7 +195,7 @@
       "refining" : ["et", "rh"],
 
       "points" : "strictly henselian valuation ring",
-      
+
       "x" : 2,
       "y" : -1
     },
@@ -203,12 +203,12 @@
     {
       "id" : "ldh",
       "symbol" : "\\ell\\mathrm{dh}",
-      "name" : "eh topology",
+      "name" : "$\\ell$dh topology",
 
       "refining" : ["cdh", "fpsl"],
 
       "points" : "henselian valuation ring whose fraction field has no finite extensions of degree prime to $\\ell$",
-      
+
       "x" : 1.5,
       "y" : -0.5
     },
@@ -221,7 +221,7 @@
       "refining" : ["Zar", "prop"],
 
       "points" : "absolutely integrally closed valuation ring",
-      
+
       "x" : 8,
       "y" : -1
     }
