@@ -5,7 +5,7 @@
       "symbol" : "\\mathrm{Zar}",
       "name" : "Zariski topology",
 
-      "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ an open immersion",
+      "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i=1,\\ldots,n}$, for $f_i$ an open immersion",
       "refining" : [ "Zar", "cdp" ],
 
       "points" : "local ring",
@@ -19,7 +19,7 @@
       "symbol" : "\\mathrm{Nis}",
       "name" : "Nisnevich topology",
 
-      "generated" : "a completely decomposed family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ an étale morphism",
+      "generated" : "a completely decomposed family $\\{f_i\\colon U_i\\to X\\}_{i=1,\\ldots,n}$, for $f_i$ an étale morphism",
 
       "points" : "henselian local ring",
 
@@ -32,7 +32,7 @@
       "symbol" : "\\mathrm{ét}",
       "name" : "étale topology",
 
-      "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ an étale morphism",
+      "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i=1,\\ldots,n}$, for $f_i$ an étale morphism",
 
       "points" : "strictly henselian local ring",
 
@@ -96,7 +96,7 @@
       "symbol" : "\\mathrm{cl}",
       "name" : "closed topology",
 
-      "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ a closed immersion",
+      "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i=1,\\ldots,n}$, for $f_i$ a closed immersion",
 
       "points" : "integral ring",
 
@@ -109,7 +109,7 @@
       "symbol" : "\\mathrm{fps}\\ell'",
       "name" : "finite-surjective-prime-to-$\\ell$ topology",
 
-      "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a finite flat morphism of constant degree prime to $\\ell$",
+      "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}$, for $f$ a finite flat morphism of constant degree prime to $\\ell$",
 
       "x" : 1.5,
       "y" : 1
@@ -131,7 +131,7 @@
       "symbol" : "\\mathrm{fps}",
       "name" : "finite topology",
 
-      "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i\\in I}$, for $f_i$ a finite morphism",
+      "generated" : "a jointly surjective family $\\{f_i\\colon U_i\\to X\\}_{i=1,\\ldots,n}$, for $f_i$ a finite morphism",
 
       "points" : "absolutely integrally closed integral ring",
 
@@ -144,7 +144,7 @@
       "symbol" : "\\mathrm{prop}",
       "name" : "proper topology",
 
-      "generated" : "a completely decomposed singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a proper morphism",
+      "generated" : "a jointly surjective family $\\{f_i\\colon Y_i\\to X\\}_{i=1,\\ldots,n}$, for $f_i$ a proper morphism",
 
       "x" : 8,
       "y" : 1
@@ -155,7 +155,7 @@
       "symbol" : "\\mathrm{cdp}",
       "name" : "envelope topology",
 
-      "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}_{i\\in I}$, for $f$ a proper morphism",
+      "generated" : "a completely decomposed family $\\{f_i\\colon Y_i\\to X\\}_{i=1,\\ldots,n}$, for $f_i$ a proper morphism",
 
       "x" : -1,
       "y" : -1
@@ -324,10 +324,5 @@
       "coarser" : "eh",
       "finer"   : "h"
     }
-
-
-
-
-
   ]
 }
