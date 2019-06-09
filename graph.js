@@ -1,4 +1,4 @@
-var width = 60,
+var width = 65,
     height = 20;
 
 var force = d3.layout.force()
@@ -106,7 +106,7 @@ function createPassport(topology, topologies, terms) {
 
 // transform the coordinates from the JSON file to meaningful coordinates on the canvas
 function transform(x, y) {
-  return [10 + 6 * x, height / 2 - 6 * y]; // TODO make this an object with .x and .y?
+  return [10 + 6 * x + 5, height / 2 - 6 * y]; // TODO make this an object with .x and .y?
 }
 
 d3.json("format.json", function(error, graph) {
@@ -186,13 +186,15 @@ d3.json("format.json", function(error, graph) {
         function(d) {
           var points = "";
           // TODO I'm using the fixed em size here...
-          points += 15 * transform(d.target.x, d.target.y)[0] + ",";
-          points += 15 * transform(d.target.x, d.target.y)[1] + " ";
+          points += 13 * transform(d.target.x, d.target.y)[0] + ",";
+          points += 13 * transform(d.target.x, d.target.y)[1] + " ";
           // TODO computing the "midpoint" should rather be a fixed distance from the target?
-          points += 15 * (1.5 * transform(d.source.x, d.source.y)[0] + transform(d.target.x, d.target.y)[0]) / 2.5 + ","
-          points += 15 * (1.5 * transform(d.source.x, d.source.y)[1] + transform(d.target.x, d.target.y)[1]) / 2.5 + " "
-          points += 15 * transform(d.source.x, d.source.y)[0] + ",";
-          points += 15 * transform(d.source.x, d.source.y)[1];
+          points += 13 * (1.5 * transform(d.source.x, d.source.y)[0] + transform(d.target.x, d.target.y)[0]) / 2.5 + ","
+          points += 13 * (1.5 * transform(d.source.x, d.source.y)[1] + transform(d.target.x, d.target.y)[1]) / 2.5 + " "
+          points += 13 * transform(d.source.x, d.source.y)[0] + ",";
+          points += 13 * transform(d.source.x, d.source.y)[1];
+
+          console.log(points);
 
           return points;
         }

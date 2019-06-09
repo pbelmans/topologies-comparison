@@ -88,7 +88,7 @@
       "points" : "absolutely integrally closed integral local ring",
 
       "x" : 7,
-      "y" : -0.5
+      "y" : 0.5
     },
 
     {
@@ -100,7 +100,20 @@
 
       "points" : "integral ring",
 
-      "x" : 0,
+      "x" : -2,
+      "y" : 1
+    },
+
+    {
+      "id" : "cdf",
+      "symbol" : "\\mathrm{cdf}",
+      "name" : "completely decomposed finite topology",
+
+      "generated" : "a completely decomposed family $\\{f_i\\colon U_i\\to X\\}_{i=1,\\ldots,n}$, for $f_i$ a finite morphism",
+
+      "points" : "integral ring",
+
+      "x" : -1,
       "y" : 1
     },
 
@@ -112,7 +125,7 @@
       "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}$, for $f$ a finite flat morphism of constant degree prime to $\\ell$",
 
       "x" : 1.5,
-      "y" : 1
+      "y" : 0.5
     },
 
     {
@@ -123,7 +136,7 @@
       "generated" : "a surjective singleton family $\\{f\\colon Y\\to X\\}$, for $f$ a finite flat morphism",
 
       "x" : 5,
-      "y" : 1
+      "y" : 0.5
     },
 
     {
@@ -262,7 +275,15 @@
     },
     {
       "coarser" : "cl",
-      "finer"   : "fpsl"
+      "finer"   : "cdf"
+    },
+    {
+      "coarser" : "cdf",
+      "finer"   : "f"
+    },
+    {
+      "coarser" : "cdf",
+      "finer"   : "cdp"
     },
     {
       "coarser" : "fpsl",
@@ -275,6 +296,10 @@
     {
       "coarser" : "fps",
       "finer"   : "f"
+    },
+    {
+      "coarser" : "fps",
+      "finer"   : "fppf"
     },
     {
       "coarser" : "f",
