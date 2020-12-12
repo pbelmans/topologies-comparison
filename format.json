@@ -79,6 +79,15 @@
     },
 
     {
+      "id" : "can",
+      "symbol" : "\\mathrm{can}",
+      "name" : "canonical topology",
+
+      "x" : 7,
+      "y" : 0
+    },
+
+    {
       "id" : "qfh",
       "symbol" : "\\mathrm{qfh}",
       "name" : "qfh topology",
@@ -264,6 +273,10 @@
     {
       "coarser" : "fppf",
       "finer"   : "fpqc"
+    },
+    {
+      "coarser" : "fpqc",
+      "finer"   : "can"
     },
     {
       "coarser" : "fppf",
